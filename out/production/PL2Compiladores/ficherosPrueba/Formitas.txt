@@ -1,0 +1,1 @@
+imgdim:180,shpdim:32>>>octogono(contraste:100%)(tamanio:900px),cuadrado,cuadrado,triangulo,triangulo|triangulo,circulo|cuadrado,circulo,triangulo,cuadrado|circulo,circulo,circulo|triangulo<<<
