@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl2Compiladoresfinal/AnalizadorSintactico/src/csv\g.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/csv\g.g4 by ANTLR 4.10.1
 package csv;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -34,6 +34,12 @@ public interface gVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRow(gParser.RowContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link gParser#fieldCabecera}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFieldCabecera(gParser.FieldCabeceraContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link gParser#field}.
 	 * @param ctx the parse tree

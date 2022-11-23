@@ -11,7 +11,8 @@ public class Launch {
     public static void main(String[] args) {
 
         try {
-            String source = "./src/FicherosPrueba/CSV_01.txt";
+            JsonTipo ejemplo;
+            String source = "./src/FicherosPrueba/CSV_02.txt";
             CharStream cs = fromFileName(source);
             gLexer Lexer = new gLexer(cs);
             CommonTokenStream token = new CommonTokenStream(Lexer);
@@ -20,7 +21,15 @@ public class Launch {
 
             MyVisitor visitor = new MyVisitor();
             visitor.visit(tree);
-            System.out.print(tree.toStringTree(parser));
+           // System.out.print(tree.toStringTree(parser));
+            ejemplo=visitor.getPrimero();
+            System.out.println("[");
+            while (ejemplo.getSig()!=null){
+                System.out.println(ejemplo.toString());
+                ejemplo=ejemplo.getSig();
+            }
+            System.out.println("]");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

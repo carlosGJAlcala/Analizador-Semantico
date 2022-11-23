@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl2Compiladoresfinal/AnalizadorSintactico/src/csv\g.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/csv\g.g4 by ANTLR 4.10.1
 package csv;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -59,6 +59,18 @@ public class gBaseListener implements gListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitRow(gParser.RowContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFieldCabecera(gParser.FieldCabeceraContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFieldCabecera(gParser.FieldCabeceraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
