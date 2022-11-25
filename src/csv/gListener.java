@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/csv\g.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/Lab/p3/src/csv\g.g4 by ANTLR 4.10.1
 package csv;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
