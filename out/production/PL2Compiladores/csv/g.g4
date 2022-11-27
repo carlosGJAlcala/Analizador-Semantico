@@ -2,17 +2,17 @@ grammar g;
 
 csvFile: definition? hdr row+ EOF ;
 
-hdr : row ;
+hdr : fieldCabecera (SEPARADOR fieldCabecera)* NEWLINE ;
 definition:LISTDEFINITION SEPARADOR')' NEWLINE ;
 row : field (SEPARADOR field)* NEWLINE ;
-
+fieldCabecera:texto=TEXTO;
 field
-    :TEXTO
-    |STRING
+    :texto=TEXTO
     ;
 NEWLINE: ('\r'? '\n' | '\r')+ ;
 LISTDEFINITION:'List-Definition(';
 SEPARADOR:[|;,<>$%&];
-TEXTO: ~[|;,\n\r<>$%&"]+ ;
-STRING: '"' ('""'|~'"')* '"' ;
+//un texto puede ser un string o cualquier cosa
+TEXTO: ~[|;,\n\r<>$%&"]+ |'"' ('""'|~'"')* '"';
+//STRING: '"' ('""'|~'"')* '"' ;
 

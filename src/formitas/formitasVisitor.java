@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl2Compiladoresfinal/AnalizadorSintactico/src/formitas\formitas.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/formitas\formitas.g4 by ANTLR 4.10.1
 package formitas;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -28,6 +28,12 @@ public interface formitasVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRow(formitasParser.RowContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link formitasParser#saltoLinea}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSaltoLinea(formitasParser.SaltoLineaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link formitasParser#campo}.
 	 * @param ctx the parse tree

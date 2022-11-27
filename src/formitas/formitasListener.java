@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl2Compiladoresfinal/AnalizadorSintactico/src/formitas\formitas.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/formitas\formitas.g4 by ANTLR 4.10.1
 package formitas;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -37,6 +37,16 @@ public interface formitasListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRow(formitasParser.RowContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link formitasParser#saltoLinea}.
+	 * @param ctx the parse tree
+	 */
+	void enterSaltoLinea(formitasParser.SaltoLineaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link formitasParser#saltoLinea}.
+	 * @param ctx the parse tree
+	 */
+	void exitSaltoLinea(formitasParser.SaltoLineaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link formitasParser#campo}.
 	 * @param ctx the parse tree

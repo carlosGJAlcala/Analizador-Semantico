@@ -20,7 +20,7 @@ public class Launch {
 
             MyVisitor visitor = new MyVisitor();
             visitor.visit(tree);
-            System.out.print(tree.toStringTree(parser));
+            System.out.print(visitor.getTs().toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
