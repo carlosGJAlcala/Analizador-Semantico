@@ -2,20 +2,21 @@ grammar formitas;
 
 formitasFile: fila EOF ;
 
-fila : IMGDIM','SHPDIM APERTURA row('|'row)* CERRADURA;
+fila : IMGDIM','SHPDIM APERTURA row(saltoLinea row)* CERRADURA;
 
 row : campo (SEPARADOR campo)* ;
-
+saltoLinea:'|';
 campo
-    :FIGURA(CONTRASTE)?(TAMANIO)?
+    :figura=FIGURA('(color:'color=COLOR')')?('(size:'size=TAMANIO'px)')?
     ;
 
-CONTRASTE:'(contraste:'[01][0-9][0-9]'%)';
-TAMANIO:'(tamanio:'[0-9]?[0-9]?[0-9]('px)'|'em)');
+//figura:circulo=CIRCULO|cuadrado=CUADRADO|triangulo=TRIANGULO;
+
+TAMANIO:[0-9]?[0-9]?[0-9];
 ESPACIO : (' ' | '\t')+  -> skip;
 NEWLINE: ('\r'? '\n' | '\r')+ -> skip;
-
-FIGURA:'circulo'|'triangulo'|'trapecio'|'trapezoide'|'cuadrado'|'Pentagono'|'Hexagono'|'heptagono'|'octogono'|'eneagono'|'decagono';
+COLOR:'red'|'orange'|'yellow'|'cyan'|'blue'|'green'|'purple'|'brown'|'black'|'grey'|'white';
+FIGURA:'circulo'|'triangulo'|'cuadrado';
 APERTURA:'>>>';
 CERRADURA:'<<<';
 IMGDIM:'imgdim:'NUMERO;
