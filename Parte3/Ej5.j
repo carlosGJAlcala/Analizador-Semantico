@@ -11,7 +11,7 @@ ldc "Hola Mundo "
 invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 
 getstatic java/lang/System/out Ljava/io/PrintStream;
-ldc 1
+ldc 123
 invokevirtual java/io/PrintStream/println(I)V
 
 

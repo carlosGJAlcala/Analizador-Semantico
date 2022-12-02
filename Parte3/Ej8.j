@@ -5,7 +5,7 @@
    .limit stack 100
    .limit locals 100
 
-ldc 15
+ldc 20
 istore 1
 ldc 0
 istore 2
