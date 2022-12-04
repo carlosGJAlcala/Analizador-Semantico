@@ -11,7 +11,16 @@ public class MyVisitor extends formitasBaseVisitor {
 
     @Override public Object visitFila(formitasParser.FilaContext ctx) {
 
-
+        String valimgdim, valshpdim,strimgdim,strshpdim;
+        valimgdim= ctx.imgdim.getText();
+        valshpdim= ctx.shpdim.getText();
+        strimgdim="ancho="+valimgdim;
+        ts.setComandos(strimgdim);
+        strimgdim="altura="+valimgdim;
+        ts.setComandos(strimgdim);
+        strshpdim="self.tamCanvas="+valshpdim;
+        ts.setComandos(strshpdim);
+        ts.setComandos("self.geometry(str(ancho) + \"x\" + str(altura))");
 
         return visitChildren(ctx); }
 

@@ -3,6 +3,9 @@ package csv;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
 
@@ -12,7 +15,7 @@ public class Launch {
 
         try {
             JsonTipo ejemplo;
-            String source = "./src/FicherosPrueba/CSV_01.txt";
+            String source = "./src/FicherosPrueba/CSV_02.txt";
             CharStream cs = fromFileName(source);
             gLexer Lexer = new gLexer(cs);
             CommonTokenStream token = new CommonTokenStream(Lexer);
@@ -24,14 +27,33 @@ public class Launch {
            // System.out.print(tree.toStringTree(parser));
             ejemplo=visitor.getPrimero();
             System.out.println("[");
+            String salida="[";
             while (ejemplo.getSig()!=null){
-                System.out.println(ejemplo.toString());
+                salida+=ejemplo.toString();
                 ejemplo=ejemplo.getSig();
             }
-            System.out.println("]");
+            salida=salida.substring(0,salida.length()-1);
 
+            salida+="]";
+            System.out.println(salida);
+            writer(salida);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-    }}
+    }
+    public static void  writer(String texto){
+        String sFichero = "./src/ficherosSalida/outJson.json";
+        BufferedWriter bw= null;
+        try {
+            bw = new BufferedWriter(new FileWriter(sFichero));
+            bw.write(texto);
+            bw.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+}

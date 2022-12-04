@@ -10,12 +10,8 @@ public class TSgeneradorPY {
                 "class Figuras (Tk):\n" +
                 "    def __init__(self,*args,**kwargs):\n" +
                 "        super().__init__(*args, **kwargs)\n" +
-                "        ancho=1080\n" +
-                "        altura=720\n" +
                 "        self.posYcanvas=0\n" +
-                "        self.posXcanvas=0\n" +
-                "        self.tamCanvas=altura/5\n" +
-                "        self.geometry(str(ancho)+\"x\"+str(altura))";
+                "        self.posXcanvas=0\n" ;
         this.funciones="    def create_canvas(self,x,y):\n" +
                 "        w=self.tamCanvas\n" +
                 "        h=self.tamCanvas\n" +

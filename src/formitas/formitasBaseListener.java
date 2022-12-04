@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/PL3Compiladores/AnalizadorSemantico/src/formitas\formitas.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/pl3/src/formitas\formitas.g4 by ANTLR 4.10.1
 package formitas;
 
 import org.antlr.v4.runtime.ParserRuleContext;

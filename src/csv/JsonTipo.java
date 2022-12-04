@@ -53,7 +53,7 @@ public class JsonTipo {
                 }
 
             }
-            resultado+="}";
+            resultado+="},";
         }
         return resultado;
     }
