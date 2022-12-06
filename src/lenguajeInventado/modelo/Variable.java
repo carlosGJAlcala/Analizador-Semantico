@@ -2,7 +2,7 @@ package lenguajeInventado.modelo;
 
 public class Variable {
     String nombre;
-    Object valor;
+    String valor;
     String tipo;
     int contador;
     public Variable() {
@@ -28,11 +28,11 @@ public class Variable {
         this.nombre = nombre;
     }
 
-    public Object getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Object valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 

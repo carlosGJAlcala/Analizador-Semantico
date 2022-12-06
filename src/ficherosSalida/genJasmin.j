@@ -6,29 +6,24 @@
    .limit locals 100
 
 
-ldc 20
+ldc 5
+
+ldc 2
+ineg
+iadd
 istore 1
-ldc 5
+ldc 3
 
 ldc 2
 ineg
 iadd
-ldc 0
-istore 2
-ldc 5
+ldc 1
+istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
 
-ldc 2
-ineg
-iadd
+ldc 1
 
-ldc i
-
-istore 3
-ldc 5
-
-ldc 2
-ineg
-iadd
+invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 return
 
 .end method

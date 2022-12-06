@@ -48,15 +48,15 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 */
 	void exitAsignacion(LenguajeInventadoParser.AsignacionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 */
-	void enterAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	void enterActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 */
-	void exitAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	void exitActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#expr}.
 	 * @param ctx the parse tree
@@ -189,6 +189,54 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMostrar(LenguajeInventadoParser.MostrarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code NumMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumMostrar(LenguajeInventadoParser.NumMostrarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code NumMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumMostrar(LenguajeInventadoParser.NumMostrarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code StringMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringMostrar(LenguajeInventadoParser.StringMostrarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code StringMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringMostrar(LenguajeInventadoParser.StringMostrarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code FloatMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatMostrar(LenguajeInventadoParser.FloatMostrarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code FloatMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatMostrar(LenguajeInventadoParser.FloatMostrarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code VarMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code VarMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#for}.
 	 * @param ctx the parse tree

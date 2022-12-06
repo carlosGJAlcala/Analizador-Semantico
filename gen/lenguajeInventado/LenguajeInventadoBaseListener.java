@@ -64,13 +64,13 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAztulizar(LenguajeInventadoParser.AztulizarContext ctx) { }
+	@Override public void enterActualizar(LenguajeInventadoParser.ActualizarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAztulizar(LenguajeInventadoParser.AztulizarContext ctx) { }
+	@Override public void exitActualizar(LenguajeInventadoParser.ActualizarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -215,6 +215,54 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMostrar(LenguajeInventadoParser.MostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumMostrar(LenguajeInventadoParser.NumMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumMostrar(LenguajeInventadoParser.NumMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStringMostrar(LenguajeInventadoParser.StringMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStringMostrar(LenguajeInventadoParser.StringMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFloatMostrar(LenguajeInventadoParser.FloatMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFloatMostrar(LenguajeInventadoParser.FloatMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -35,11 +35,11 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAsignacion(LenguajeInventadoParser.AsignacionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	T visitActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#expr}.
 	 * @param ctx the parse tree
@@ -118,6 +118,34 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMostrar(LenguajeInventadoParser.MostrarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code NumMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumMostrar(LenguajeInventadoParser.NumMostrarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StringMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringMostrar(LenguajeInventadoParser.StringMostrarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FloatMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatMostrar(LenguajeInventadoParser.FloatMostrarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code VarMostrar}
+	 * labeled alternative in {@link LenguajeInventadoParser#valorAmostrar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#for}.
 	 * @param ctx the parse tree

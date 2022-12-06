@@ -12,7 +12,7 @@ campo:asignacion FINLINEA
     |actualizar
     ;
 asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr  ;
-actualizar:VARIABLE IGUAL expr FINLINEA ;
+actualizar:nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 
 expr:operacion
     |expr(OPERADORESCOND)expr
@@ -43,7 +43,12 @@ textos: TEXTO+
 exprcond:condicion?  IF?  (asignacion FINLINEA|actualizar)*(ELSE (VARIABLE IGUAL expr FINLINEA ))? FINCOND;
 condicion:(VARIABLE OPERADORESCOND)? (VARIABLE OPERADORESBOOL)? (VARIABLE BOOLTIPO)? (NUMERO|STRING|FLOAT|VARIABLE FINLINEA) FINCONDICION?;
 
-mostrar: MOSTRAR (NUMERO|STRING|FLOAT|VARIABLE FINLINEA) ?;
+mostrar: MOSTRAR valorAmostrar FINLINEA ;
+valorAmostrar:  valor=NUMERO #NumMostrar
+              |valor=STRING #StringMostrar
+              |valor=FLOAT #FloatMostrar
+              |valor=VARIABLE #VarMostrar
+              ;
 for:PARENTESIS asignacion SEPARADOR condicion SEPARADOR variableFor=VARIABLE INDEC PARENTESIS  FINCONDICION exprcond;
 
 

@@ -6,28 +6,19 @@
    .limit locals 100
 
 
-ldc 20
+ldc 5
+
+ldc 2
+ineg
+iadd
 istore 1
-ldc 5
+ldc 3
 
 ldc 2
 ineg
 iadd
-ldc 0
-istore 2
-ldc 5
-
-ldc 2
-ineg
-iadd
-
-ldc i
-
-ldc 5
-
-ldc 2
-ineg
-iadd
+ldc 1
+istore 1
 return
 
 .end method
