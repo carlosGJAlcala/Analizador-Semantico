@@ -35,11 +35,11 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAsignacion(LenguajeInventadoParser.AsignacionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	T visitActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#expr}.
 	 * @param ctx the parse tree

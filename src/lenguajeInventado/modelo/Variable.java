@@ -4,11 +4,20 @@ public class Variable {
     String nombre;
     Object valor;
     String tipo;
-
+    int contador;
     public Variable() {
         this.nombre ="" ;
         this.tipo="";
         this.valor=null;
+        contador=0;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
     }
 
     public String getNombre() {

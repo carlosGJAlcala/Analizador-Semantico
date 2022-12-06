@@ -26,7 +26,7 @@ public class Launch {
 
             MyVisitor visitor = new MyVisitor();
             visitor.visit(tree);
-            System.out.print(tree.toStringTree());
+            System.out.print(tree.toStringTree(parser));
             writer(visitor.getGenerador().toString());
         } catch (IOException e) {
             e.printStackTrace();

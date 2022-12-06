@@ -48,15 +48,15 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 */
 	void exitAsignacion(LenguajeInventadoParser.AsignacionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 */
-	void enterAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	void enterActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LenguajeInventadoParser#aztulizar}.
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#actualizar}.
 	 * @param ctx the parse tree
 	 */
-	void exitAztulizar(LenguajeInventadoParser.AztulizarContext ctx);
+	void exitActualizar(LenguajeInventadoParser.ActualizarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#expr}.
 	 * @param ctx the parse tree

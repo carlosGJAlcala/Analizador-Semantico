@@ -2,18 +2,25 @@ package lenguajeInventado;
 
 
 import lenguajeInventado.modelo.GeneradorJasmin;
+import lenguajeInventado.modelo.TablaSimbolos;
+import lenguajeInventado.modelo.Variable;
 
 public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
-    GeneradorJasmin ts;
+    GeneradorJasmin gj;
     String comando;
+    Variable varTemporal;
+    TablaSimbolos ts;
+    int inttemporal;
+
     public MyVisitor() {
         super();
-        ts = new GeneradorJasmin();
-        comando="";
+        gj = new GeneradorJasmin();
+        ts = new TablaSimbolos();
+        comando = "";
     }
 
     public GeneradorJasmin getGenerador() {
-        return ts;
+        return gj;
     }
 
 
@@ -34,12 +41,26 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
     @Override
     public String visitAsignacion(LenguajeInventadoParser.AsignacionContext ctx) {
-        return visitChildren(ctx);
+        visitChildren(ctx);
+        varTemporal = new Variable();
+        varTemporal.setNombre(ctx.nombrevariable.getText());
+        ts.Insertar(varTemporal);
+
+        comando="istore "+varTemporal.getContador();
+        gj.setComandos(comando);
+        return null;
     }
 
     @Override
-    public String visitAztulizar(LenguajeInventadoParser.AztulizarContext ctx) {
-        return visitChildren(ctx);
+    public String visitActualizar(LenguajeInventadoParser.ActualizarContext ctx) {
+        visitChildren(ctx);
+        varTemporal = new Variable();
+        varTemporal.setNombre(ctx.nombrevariable.getText());
+        ts.Insertar(varTemporal);
+
+        comando="istore "+varTemporal.getContador();
+        gj.setComandos(comando);
+        return null;
     }
 
     @Override
@@ -55,48 +76,68 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     @Override
     public String visitNumber(LenguajeInventadoParser.NumberContext ctx) {
         visitChildren(ctx);
-        comando="ldc " + ctx.number.getText();
-        ts.setComandos(comando);
+        inttemporal = Integer.parseInt(ctx.number.getText());
+        comando = "ldc " + inttemporal;
+        gj.setComandos(comando);
         return null;
     }
 
     @Override
     public String visitDiv(LenguajeInventadoParser.DivContext ctx) {
         visitChildren(ctx);
-        comando=visitChildren(ctx) + "\nldc " + ctx.right.getText() + "\n" + "idiv";
-        ts.setComandos(comando);
+        inttemporal = inttemporal / Integer.parseInt(ctx.right.getText());
+
+        varTemporal.setTipo("int");
+        varTemporal.setValor(inttemporal);
+
+        comando = visitChildren(ctx) + "\nldc " + ctx.right.getText() + "\n" + "idiv";
+        gj.setComandos(comando);
         return null;
     }
 
     @Override
     public String visitMul(LenguajeInventadoParser.MulContext ctx) {
+
         visitChildren(ctx);
-        comando="\nldc " + ctx.right.getText() + "\n" + "imul";
-        ts.setComandos(comando);
+        inttemporal = inttemporal * Integer.parseInt(ctx.right.getText());
+
+        varTemporal.setTipo("int");
+        varTemporal.setValor(inttemporal);
+
+        comando = "\nldc " + ctx.right.getText() + "\n" + "imul";
+        gj.setComandos(comando);
         return null;
     }
 
     @Override
     public String visitPlus(LenguajeInventadoParser.PlusContext ctx) {
+
         visitChildren(ctx);
-        comando="\nldc " + ctx.right.getText() + "\n" + "iadd";
-        ts.setComandos(comando);
+        inttemporal = inttemporal + Integer.parseInt(ctx.right.getText());
+
+
+        varTemporal.setTipo("int");
+        varTemporal.setValor(inttemporal);
+
+        comando = "\nldc " + ctx.right.getText() + "\n" + "iadd";
+        gj.setComandos(comando);
         return null;
     }
 
     @Override
     public String visitMinus(LenguajeInventadoParser.MinusContext ctx) {
         visitChildren(ctx);
-        comando= "\nldc " + ctx.right.getText() + "\n" + "ineg"
+        inttemporal = inttemporal - Integer.parseInt(ctx.right.getText());
+
+        varTemporal.setTipo("int");
+        varTemporal.setValor(inttemporal);
+
+        comando = "\nldc " + ctx.right.getText() + "\n" + "ineg"
                 + "\n" + "iadd";
-        ts.setComandos(comando);
+        gj.setComandos(comando);
         return null;
     }
 
-    @Override
-    public String visitComentario(LenguajeInventadoParser.ComentarioContext ctx) {
-        return visitChildren(ctx);
-    }
 
     @Override
     public String visitTextos(LenguajeInventadoParser.TextosContext ctx) {
@@ -120,8 +161,26 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
     @Override
     public String visitFor(LenguajeInventadoParser.ForContext ctx) {
-        return visitChildren(ctx);
+        visitChildren(ctx);
+        comando = "\nldc " + ctx.variableFor.getText() + "\n";
+        gj.setComandos(comando);
+        ts.setContador(ts.getContador()+1);
+        comando="istore "+ts.getContador();
+        gj.setComandos(comando);
+        return null;
     }
+
+    @Override
+    protected String aggregateResult(String aggregate, String nextResult) {
+        if (aggregate == null) {
+            return nextResult;
+        }
+        if (nextResult == null) {
+            return aggregate;
+        }
+        return aggregate + "\n" + nextResult;
+    }
+
 
 }
 

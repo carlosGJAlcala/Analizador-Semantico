@@ -64,13 +64,13 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAztulizar(LenguajeInventadoParser.AztulizarContext ctx) { }
+	@Override public void enterActualizar(LenguajeInventadoParser.ActualizarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAztulizar(LenguajeInventadoParser.AztulizarContext ctx) { }
+	@Override public void exitActualizar(LenguajeInventadoParser.ActualizarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

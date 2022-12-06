@@ -45,7 +45,7 @@ public class LenguajeInventadoBaseVisitor<T> extends AbstractParseTreeVisitor<T>
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAztulizar(LenguajeInventadoParser.AztulizarContext ctx) { return visitChildren(ctx); }
+	@Override public T visitActualizar(LenguajeInventadoParser.ActualizarContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

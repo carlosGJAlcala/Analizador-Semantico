@@ -7,17 +7,23 @@
 
 
 ldc 20
+istore 1
 ldc 5
 
 ldc 2
 ineg
 iadd
 ldc 0
+istore 2
 ldc 5
 
 ldc 2
 ineg
 iadd
+
+ldc i
+
+istore 3
 ldc 5
 
 ldc 2

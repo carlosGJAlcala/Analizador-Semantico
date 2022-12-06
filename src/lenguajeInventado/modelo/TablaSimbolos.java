@@ -6,11 +6,29 @@ import java.util.Map;
 public class TablaSimbolos {
     Map<String, Variable> tablaExpansion;
     TablaSimbolos sig, anterior;
+    int contador;
 
     public TablaSimbolos() {
         this.tablaExpansion = new HashMap();
         this.anterior = null;
         this.sig = null;
+        this.contador=0;
+    }
+
+    public Map<String, Variable> getTablaExpansion() {
+        return tablaExpansion;
+    }
+
+    public void setTablaExpansion(Map<String, Variable> tablaExpansion) {
+        this.tablaExpansion = tablaExpansion;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
     }
 
     public TablaSimbolos getSig() {
@@ -30,6 +48,8 @@ public class TablaSimbolos {
     }
 
     public void Insertar(Variable var) {
+        this.contador=contador+1;
+        var.setContador(contador);
         tablaExpansion.put(var.getNombre(), var);
 
     }
@@ -39,7 +59,7 @@ public class TablaSimbolos {
 
     }
 
-    public void Aztualiza(Variable var) {
+    public void Actualizar(Variable var) {
         tablaExpansion.put(var.getNombre(), var);
 
     }
