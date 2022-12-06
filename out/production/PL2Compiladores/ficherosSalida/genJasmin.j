@@ -19,6 +19,11 @@ ineg
 iadd
 ldc 1
 istore 1
+getstatic java/lang/System/out Ljava/io/PrintStream;
+
+ldc 1
+
+invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 return
 
 .end method
