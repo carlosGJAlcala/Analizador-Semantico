@@ -6,7 +6,7 @@ public class GeneradorJasmin {
 
     public GeneradorJasmin() {
         this.comandos = "\n";
-        this.cabecera = ".class public Sumar\n"
+        this.cabecera = ".class public ClaseGenerada\n"
                 + ".super java/lang/Object\n"
                 + "\n"
                 + ".method public static main([Ljava/lang/String;)V\n"

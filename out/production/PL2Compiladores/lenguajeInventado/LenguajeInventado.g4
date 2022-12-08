@@ -41,7 +41,7 @@ textos: TEXTO+
         ;
 // while  y if else
 exprcond:condicion?  IF?  (asignacion FINLINEA|actualizar)*(ELSE (VARIABLE IGUAL expr FINLINEA ))? FINCOND;
-condicion:(VARIABLE OPERADORESCOND)? (VARIABLE OPERADORESBOOL)? (VARIABLE BOOLTIPO)? (NUMERO|STRING|FLOAT|VARIABLE FINLINEA) FINCONDICION?;
+condicion:(VARIABLE OPERADORESCOND)? (VARIABLE OPERADORESBOOL)? (VARIABLE BOOLTIPO)? (valorAmostrar FINLINEA) FINCONDICION?;
 
 mostrar: MOSTRAR valorAmostrar FINLINEA ;
 valorAmostrar:  valor=NUMERO #NumMostrar

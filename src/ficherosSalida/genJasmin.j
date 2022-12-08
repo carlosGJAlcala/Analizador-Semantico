@@ -15,31 +15,12 @@ ineg
 iadd
 ldc 3
 istore 1
-ldc 0
-istore 2
-ldc 5
 
-ldc 2
-ineg
-iadd
-ldc 3
-istore 1
-
-ldc i
-
-istore 3
-ldc 5
-
-ldc 2
-ineg
-iadd
-ldc 3
-istore 1
 getstatic java/lang/System/out Ljava/io/PrintStream;
 
 ldc 3
 
-invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+invokevirtual java/io/PrintStream/print(I)V
 return
 
 .end method

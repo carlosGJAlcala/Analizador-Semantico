@@ -23,23 +23,34 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         return gj;
     }
 
-    @Override public String visitProg(LenguajeInventadoParser.ProgContext ctx) {
+    @Override
+    public String visitProg(LenguajeInventadoParser.ProgContext ctx) {
 
-        return visitChildren(ctx); }
+        return visitChildren(ctx);
+    }
+
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitFila(LenguajeInventadoParser.FilaContext ctx) { return visitChildren(ctx); }
+    @Override
+    public String visitFila(LenguajeInventadoParser.FilaContext ctx) {
+        return visitChildren(ctx);
+    }
+
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitCampo(LenguajeInventadoParser.CampoContext ctx) { return visitChildren(ctx); }
+    @Override
+    public String visitCampo(LenguajeInventadoParser.CampoContext ctx) {
+        return visitChildren(ctx);
+    }
+
     @Override
     public String visitAsignacion(LenguajeInventadoParser.AsignacionContext ctx) {
         varTemporal = new Variable();
@@ -66,7 +77,6 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
     @Override
     public String visitExpr(LenguajeInventadoParser.ExprContext ctx) {
-
 
 
         return visitChildren(ctx);
@@ -170,7 +180,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         gj.setComandos(comando);
         visitChildren(ctx);
 
-        comando = "invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V";
+        comando = "invokevirtual java/io/PrintStream/print(" + comando + ")V";
         gj.setComandos(comando);
 
 
@@ -182,6 +192,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
         comando = "\nldc " + ctx.valor.getText() + "\n";
         gj.setComandos(comando);
+        comando = "I";
         return null;
     }
 
@@ -190,6 +201,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
         comando = "\nldc " + ctx.valor.getText() + "\n";
         gj.setComandos(comando);
+        comando = "Ljava/lang/String;";
         return null;
     }
 
@@ -198,16 +210,23 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
         comando = "\nldc " + ctx.valor.getText() + "\n";
         gj.setComandos(comando);
+        comando = "F";
         return null;
     }
 
     @Override
     public String visitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx) {
         visitChildren(ctx);
-        Variable var =  ts.fecth(ctx.valor.getText());
+        Variable var = ts.fecth(ctx.valor.getText());
         comando = "\nldc " + var.getValor() + "\n";
         gj.setComandos(comando);
-
+        if (var.getTipo().equals("String")) {
+            comando = "Ljava/lang/String;";
+        } else if (var.getTipo().equals("int")) {
+            comando= "I";
+        } else if (var.getTipo().equals("Float")) {
+            comando = "F";
+        }
         return null;
     }
 
