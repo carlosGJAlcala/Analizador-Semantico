@@ -1,4 +1,4 @@
-.class public Sumar
+.class public ClaseGenerada
 .super java/lang/Object
 
 .method public static main([Ljava/lang/String;)V
@@ -7,18 +7,14 @@
 
 
 ldc 20
-istore 0
+istore 1
 ldc 5
 
 ldc 2
 ineg
 iadd
 ldc 3
-istore 0
-
-getstatic java/lang/System/out Ljava/io/PrintStream;
-ldc 3
-invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+istore 1
 return
 
 .end method

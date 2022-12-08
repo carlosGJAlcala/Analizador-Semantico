@@ -160,25 +160,71 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 */
 	void exitTextos(LenguajeInventadoParser.TextosContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LenguajeInventadoParser#exprcond}.
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#condicionif}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprcond(LenguajeInventadoParser.ExprcondContext ctx);
+	void enterCondicionif(LenguajeInventadoParser.CondicionifContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LenguajeInventadoParser#exprcond}.
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#condicionif}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprcond(LenguajeInventadoParser.ExprcondContext ctx);
+	void exitCondicionif(LenguajeInventadoParser.CondicionifContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LenguajeInventadoParser#condicion}.
+	 * Enter a parse tree produced by the {@code Mayor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondicion(LenguajeInventadoParser.CondicionContext ctx);
+	void enterMayor(LenguajeInventadoParser.MayorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LenguajeInventadoParser#condicion}.
+	 * Exit a parse tree produced by the {@code Mayor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondicion(LenguajeInventadoParser.CondicionContext ctx);
+	void exitMayor(LenguajeInventadoParser.MayorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenor(LenguajeInventadoParser.MenorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenor(LenguajeInventadoParser.MenorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Igualigual}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 */
+	void enterIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Igualigual}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 */
+	void exitIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#condicionfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondicionfor(LenguajeInventadoParser.CondicionforContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#condicionfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#branch}.
+	 * @param ctx the parse tree
+	 */
+	void enterBranch(LenguajeInventadoParser.BranchContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#branch}.
+	 * @param ctx the parse tree
+	 */
+	void exitBranch(LenguajeInventadoParser.BranchContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#mostrar}.
 	 * @param ctx the parse tree
@@ -237,6 +283,16 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#if}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf(LenguajeInventadoParser.IfContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#if}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf(LenguajeInventadoParser.IfContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#for}.
 	 * @param ctx the parse tree

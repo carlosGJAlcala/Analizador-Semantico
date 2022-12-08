@@ -1,4 +1,4 @@
-.class public Sumar
+.class public ClaseGenerada
 .super java/lang/Object
 
 .method public static main([Ljava/lang/String;)V
@@ -15,7 +15,6 @@ ineg
 iadd
 ldc 3
 istore 1
-
 getstatic java/lang/System/out Ljava/io/PrintStream;
 
 ldc 3

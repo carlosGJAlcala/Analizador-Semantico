@@ -101,17 +101,44 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTextos(LenguajeInventadoParser.TextosContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeInventadoParser#exprcond}.
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#condicionif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprcond(LenguajeInventadoParser.ExprcondContext ctx);
+	T visitCondicionif(LenguajeInventadoParser.CondicionifContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeInventadoParser#condicion}.
+	 * Visit a parse tree produced by the {@code Mayor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCondicion(LenguajeInventadoParser.CondicionContext ctx);
+	T visitMayor(LenguajeInventadoParser.MayorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenor(LenguajeInventadoParser.MenorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Igualigual}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#condicionfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#branch}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBranch(LenguajeInventadoParser.BranchContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#mostrar}.
 	 * @param ctx the parse tree
@@ -146,6 +173,12 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#if}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf(LenguajeInventadoParser.IfContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#for}.
 	 * @param ctx the parse tree

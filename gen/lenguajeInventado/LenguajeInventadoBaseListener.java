@@ -184,25 +184,73 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprcond(LenguajeInventadoParser.ExprcondContext ctx) { }
+	@Override public void enterCondicionif(LenguajeInventadoParser.CondicionifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprcond(LenguajeInventadoParser.ExprcondContext ctx) { }
+	@Override public void exitCondicionif(LenguajeInventadoParser.CondicionifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondicion(LenguajeInventadoParser.CondicionContext ctx) { }
+	@Override public void enterMayor(LenguajeInventadoParser.MayorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondicion(LenguajeInventadoParser.CondicionContext ctx) { }
+	@Override public void exitMayor(LenguajeInventadoParser.MayorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenor(LenguajeInventadoParser.MenorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenor(LenguajeInventadoParser.MenorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIgualigual(LenguajeInventadoParser.IgualigualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIgualigual(LenguajeInventadoParser.IgualigualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondicionfor(LenguajeInventadoParser.CondicionforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBranch(LenguajeInventadoParser.BranchContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBranch(LenguajeInventadoParser.BranchContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -263,6 +311,18 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIf(LenguajeInventadoParser.IfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIf(LenguajeInventadoParser.IfContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

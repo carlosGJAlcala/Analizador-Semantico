@@ -6,8 +6,8 @@ fila :campo( FINLINEA campo)* ;
 
 campo:asignacion FINLINEA
     |comentario
-    |exprcond
     |mostrar
+    |if
     |for
     |actualizar
     ;
@@ -15,7 +15,8 @@ asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr  ;
 actualizar:nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 
 expr:operacion
-    |expr(OPERADORESCOND)expr
+    |expr(operadorcondicional)expr
+    |expr('>'|'<'|'=')expr
     |NUMERO
     |PARENTESIS expr PARENTESIS
     |VARIABLE
@@ -35,13 +36,25 @@ comentario: COMENTARIOABRIR textos* COMENTARIOCERRAR
             ;
 textos: TEXTO+
         |PLUS|MINUS|DIVISOR|POR
-        |OPERADORESCOND
+        |operadorcondicional
         |FINCONDICION
         |OPERADORESBOOL
         ;
-// while  y if else
-exprcond:condicion?  IF?  (asignacion FINLINEA|actualizar)*(ELSE (VARIABLE IGUAL expr FINLINEA ))? FINCOND;
-condicion:(VARIABLE OPERADORESCOND)? (VARIABLE OPERADORESBOOL)? (VARIABLE BOOLTIPO)? (valorAmostrar FINLINEA) FINCONDICION?;
+
+condicionif: variable=VARIABLE
+             operadorcond=operadorcondicional
+             valor=NUMERO|STRING|FLOAT|VARIABLE
+
+;
+operadorcondicional: MAYOR #Mayor
+                     |MENOR #Menor
+                     |IGUALIGUAL #Igualigual
+                     ;
+condicionfor: PARENTESIS asignacion SEPARADOR expr SEPARADOR VARIABLE INDEC PARENTESIS
+;
+branch : positivo= IF actualizar
+         |negativo= ELSE actualizar
+         ;
 
 mostrar: MOSTRAR valorAmostrar FINLINEA ;
 valorAmostrar:  valor=NUMERO #NumMostrar
@@ -49,8 +62,8 @@ valorAmostrar:  valor=NUMERO #NumMostrar
               |valor=FLOAT #FloatMostrar
               |valor=VARIABLE #VarMostrar
               ;
-for:PARENTESIS asignacion SEPARADOR condicion SEPARADOR variableFor=VARIABLE INDEC PARENTESIS  FINCONDICION exprcond;
-
+if:condicionif FINCONDICION branch+ FINCOND;
+for:condicionfor FINCONDICION campo+ FINCOND;
 
 
 ESPACIO : (' ' | '\t')+  -> skip;
@@ -75,7 +88,9 @@ SEPARADOR:',';
 INTRO:'\r\n';
 INDEC:('++'|'--');
 //CONDICIONES
-OPERADORESCOND:'<'|'>'|'==';
+MAYOR: '>=';
+MENOR: '<=';
+IGUALIGUAL: '==';
 FINCONDICION:'???'|'$$$'|'%%%';
 IF:'si'ESPACIO*'->' ;
 ELSE:'no'ESPACIO*'->';

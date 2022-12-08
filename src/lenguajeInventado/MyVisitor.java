@@ -10,6 +10,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     String comando;
     Variable varTemporal;
     TablaSimbolos ts;
+    Variable operando1,operando2;
     int inttemporal;
 
     public MyVisitor() {
@@ -29,23 +30,13 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         return visitChildren(ctx);
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
+
     @Override
     public String visitFila(LenguajeInventadoParser.FilaContext ctx) {
         return visitChildren(ctx);
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation returns the result of calling
-     * {@link #visitChildren} on {@code ctx}.</p>
-     */
+
     @Override
     public String visitCampo(LenguajeInventadoParser.CampoContext ctx) {
         return visitChildren(ctx);
@@ -57,6 +48,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
 
         varTemporal.setNombre(ctx.nombrevariable.getText());
+        varTemporal.setValor(inttemporal+"");
         ts.Insertar(varTemporal);
 
         comando = "istore " + varTemporal.getContador();
@@ -164,14 +156,41 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     }
 
     @Override
-    public String visitExprcond(LenguajeInventadoParser.ExprcondContext ctx) {
+    public String visitIf(LenguajeInventadoParser.IfContext ctx) {
 
-        return visitChildren(ctx);
+        comando = "Esto es un if";
+        gj.setComandos(comando);
+        visitChildren(ctx);
+
+
+        return null;
     }
 
     @Override
-    public String visitCondicion(LenguajeInventadoParser.CondicionContext ctx) {
-        return visitChildren(ctx);
+    public String visitCondicionif(LenguajeInventadoParser.CondicionifContext ctx) {
+
+
+        visitChildren(ctx);
+
+        return null;
+    }
+
+    @Override public String visitMayor(LenguajeInventadoParser.MayorContext ctx) {
+        comando = "if_icmplt noEntra";
+        gj.setComandos(comando);
+        return null;
+    }
+
+    @Override public String visitMenor(LenguajeInventadoParser.MenorContext ctx){
+        comando = "if_icmpgt noEntra";
+        gj.setComandos(comando);
+        return null;
+    }
+
+    @Override public String visitIgualigual(LenguajeInventadoParser.IgualigualContext ctx){
+        comando = "if_icmpne noEntra";
+        gj.setComandos(comando);
+        return null;
     }
 
     @Override
@@ -235,11 +254,6 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     public String visitFor(LenguajeInventadoParser.ForContext ctx) {
 
         visitChildren(ctx);
-        comando = "\nldc " + ctx.variableFor.getText() + "\n";
-        gj.setComandos(comando);
-        ts.setContador(ts.getContador() + 1);
-        comando = "istore " + ts.getContador();
-        gj.setComandos(comando);
 
         return null;
     }
