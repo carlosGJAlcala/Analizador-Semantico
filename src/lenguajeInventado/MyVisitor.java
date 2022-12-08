@@ -210,6 +210,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
         comando = "\nldc " + ctx.valor.getText() + "\n";
         gj.setComandos(comando);
+
         comando = "F";
         return null;
     }
