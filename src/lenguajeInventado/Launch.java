@@ -5,10 +5,13 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import lenguajeInventado.gen.LenguajeInventadoLexer;
+import lenguajeInventado.gen.LenguajeInventadoParser;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
 

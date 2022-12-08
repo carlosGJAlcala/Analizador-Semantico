@@ -1,6 +1,8 @@
 package lenguajeInventado;
 
 
+import lenguajeInventado.gen.LenguajeInventadoBaseVisitor;
+import lenguajeInventado.gen.LenguajeInventadoParser;
 import lenguajeInventado.modelo.GeneradorJasmin;
 import lenguajeInventado.modelo.TablaSimbolos;
 import lenguajeInventado.modelo.Variable;
@@ -66,8 +68,6 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
     @Override
     public String visitExpr(LenguajeInventadoParser.ExprContext ctx) {
-
-
 
         return visitChildren(ctx);
     }
@@ -161,6 +161,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
     @Override
     public String visitCondicion(LenguajeInventadoParser.CondicionContext ctx) {
+
         return visitChildren(ctx);
     }
 
