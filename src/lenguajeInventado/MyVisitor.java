@@ -10,14 +10,18 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     String comando;
     Variable varTemporal;
     TablaSimbolos ts;
-    Variable operando1,operando2;
-    int inttemporal;
+    Variable operando1, operando2;
+    //para for
+    String pos1, pos2;
+    int inttemporal, intContBucle,intContIf;
 
     public MyVisitor() {
         super();
         gj = new GeneradorJasmin();
         ts = new TablaSimbolos();
         comando = "";
+        intContBucle = 0;
+        intContIf=0;
     }
 
     public GeneradorJasmin getGenerador() {
@@ -48,7 +52,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         visitChildren(ctx);
 
         varTemporal.setNombre(ctx.nombrevariable.getText());
-        varTemporal.setValor(inttemporal+"");
+        varTemporal.setValor(inttemporal + "");
         ts.Insertar(varTemporal);
 
         comando = "istore " + varTemporal.getContador();
@@ -60,8 +64,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     public String visitActualizar(LenguajeInventadoParser.ActualizarContext ctx) {
         varTemporal = ts.fecth(ctx.nombrevariable.getText());
         visitChildren(ctx);
-        comando = "ldc " + varTemporal.getValor();
-        gj.setComandos(comando);
+
         comando = "istore " + varTemporal.getContador();
         gj.setComandos(comando);
         return null;
@@ -155,40 +158,25 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         return visitChildren(ctx);
     }
 
+
+
     @Override
-    public String visitIf(LenguajeInventadoParser.IfContext ctx) {
-
-        comando = "Esto es un if";
+    public String visitMayor(LenguajeInventadoParser.MayorContext ctx) {
+        comando = "if_icmplt noEntra"+intContIf;
         gj.setComandos(comando);
-        visitChildren(ctx);
-
-
         return null;
     }
 
     @Override
-    public String visitCondicionif(LenguajeInventadoParser.CondicionifContext ctx) {
-
-
-        visitChildren(ctx);
-
-        return null;
-    }
-
-    @Override public String visitMayor(LenguajeInventadoParser.MayorContext ctx) {
-        comando = "if_icmplt noEntra";
+    public String visitMenor(LenguajeInventadoParser.MenorContext ctx) {
+        comando = "if_icmpgt noEntra"+intContIf;
         gj.setComandos(comando);
         return null;
     }
 
-    @Override public String visitMenor(LenguajeInventadoParser.MenorContext ctx){
-        comando = "if_icmpgt noEntra";
-        gj.setComandos(comando);
-        return null;
-    }
-
-    @Override public String visitIgualigual(LenguajeInventadoParser.IgualigualContext ctx){
-        comando = "if_icmpne noEntra";
+    @Override
+    public String visitIgualigual(LenguajeInventadoParser.IgualigualContext ctx) {
+        comando = "if_icmpne noEntra"+intContIf;
         gj.setComandos(comando);
         return null;
     }
@@ -238,24 +226,132 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     public String visitVarMostrar(LenguajeInventadoParser.VarMostrarContext ctx) {
         visitChildren(ctx);
         Variable var = ts.fecth(ctx.valor.getText());
-        comando = "\nldc " + var.getValor() + "\n";
+        comando = "\niload " + var.getContador() + "\n";
         gj.setComandos(comando);
         if (var.getTipo().equals("String")) {
             comando = "Ljava/lang/String;";
         } else if (var.getTipo().equals("int")) {
-            comando= "I";
+            comando = "I";
         } else if (var.getTipo().equals("Float")) {
             comando = "F";
         }
         return null;
     }
 
+
+    public String comprobarVarIf(String var1) {
+        //comprueba si es una memoria o es un numero,
+        varTemporal = new Variable();
+        if (var1.matches("[A-Za-z].*")) {
+            varTemporal = ts.fecth(var1);
+            var1 = varTemporal.getContador() + "";
+            this.comando = "ldc " + var1;
+            gj.setComandos(comando);
+            this.comando = "istore " + varTemporal.getContador();
+        } else {
+
+            this.comando = "ldc " + var1;
+            gj.setComandos(comando);
+            varTemporal.setTipo("int");
+            this.intContBucle = intContBucle + 1;
+            varTemporal.setNombre(intContBucle + "");
+            ts.Insertar(varTemporal);
+            this.comando = "istore " + varTemporal.getContador();
+            gj.setComandos(comando);
+
+
+        }
+        return varTemporal.getContador() + "";
+    }
+    @Override
+    public String visitIf(LenguajeInventadoParser.IfContext ctx) {
+        intContIf++;
+        visitChildren(ctx);
+
+        comando = "noEntra"+intContIf+":";
+        gj.setComandos(comando);
+
+        return null;
+    }
+
+    @Override
+    public String visitCondicionif(LenguajeInventadoParser.CondicionifContext ctx) {
+        String var1 = ctx.varDerecha.getText();
+        String var2 = ctx.varIzquierda.getText();
+        String pos1, pos2;
+        varTemporal = new Variable();
+        pos1 = comprobarVarIf(var1);
+        pos2 = comprobarVarIf(var2);
+
+
+        this.comando = "iload " + pos1;
+        gj.setComandos(comando);
+        this.comando = "iload "  + pos2;
+        gj.setComandos(comando);
+
+        visitChildren(ctx);
+        return null;
+    }
     @Override
     public String visitFor(LenguajeInventadoParser.ForContext ctx) {
 
         visitChildren(ctx);
-
+        this.comando="    iload "+pos1+"\n" +
+                "    ldc "+pos1+" \n" +
+                "    iadd\n" +
+                "    istore "+pos2+"\n" +
+                "    iload "+pos2+"\n" +
+                "    iload "+pos1;
+        gj.setComandos(comando);
+        this.comando = "if_icmplt bucleWhile"+intContBucle ;
+        gj.setComandos(comando);
+        comando = "noEntra"+intContBucle+":";
+        gj.setComandos(comando);
         return null;
+    }
+    @Override
+    public String visitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx) {
+
+        String var1 = ctx.nombrevariable.getText();
+        String var2 = (intContBucle++) + "";
+        String valor1 = ctx.valornum.getText();
+        String valor2 = ctx.valorlim.getText();
+
+
+        pos1 = comprobarVarFor(var1, valor1);
+        pos2 = comprobarVarFor(var2, valor2);
+
+
+        this.comando = "iload " + pos1;
+        gj.setComandos(comando);
+        this.comando = "iload " + pos2;
+        gj.setComandos(comando);
+
+        this.comando = "if_icmpge noEntra"+intContBucle ;
+        gj.setComandos(comando);
+        this.comando = "bucleWhile"+intContBucle +":";
+        gj.setComandos(comando);
+        return null;
+    }
+
+    private String comprobarVarFor(String var1, String valor1) {
+
+        //comprueba si es una memoria o es un numero,
+        varTemporal = new Variable();
+
+
+        this.comando = "ldc " + valor1;
+        gj.setComandos(comando);
+        varTemporal.setTipo("int");
+        this.intContBucle = intContBucle + 1;
+        varTemporal.setNombre(var1);
+        ts.Insertar(varTemporal);
+        this.comando = "istore " + varTemporal.getContador();
+        gj.setComandos(comando);
+
+
+        return varTemporal.getContador() + "";
+
     }
 
     private void cambioContextoSig() {

@@ -7,12 +7,22 @@ public class TablaSimbolos {
     Map<String, Variable> tablaExpansion;
     TablaSimbolos sig, anterior;
     int contador;
+    int contVarBucle;
 
     public TablaSimbolos() {
         this.tablaExpansion = new HashMap();
         this.anterior = null;
         this.sig = null;
-        this.contador=0;
+        this.contador = 0;
+        this.contVarBucle = 0;
+    }
+
+    public int getContVarBucle() {
+        return contVarBucle;
+    }
+
+    public void setContVarBucle(int contVarBucle) {
+        this.contVarBucle = contVarBucle;
     }
 
     public Map<String, Variable> getTablaExpansion() {
@@ -48,7 +58,7 @@ public class TablaSimbolos {
     }
 
     public void Insertar(Variable var) {
-        this.contador=contador+1;
+        this.contador = contador + 1;
         var.setContador(contador);
         tablaExpansion.put(var.getNombre(), var);
 

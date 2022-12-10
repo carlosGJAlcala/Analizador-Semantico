@@ -4,19 +4,18 @@ prog: (fila NEWLINE?)+;
 
 fila :campo( FINLINEA campo)* ;
 
-campo:asignacion FINLINEA
+campo:asignacion
     |comentario
     |mostrar
     |if
     |for
     |actualizar
     ;
-asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr  ;
+asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 actualizar:nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 
 expr:operacion
     |expr(operadorcondicional)expr
-    |expr('>'|'<'|'=')expr
     |NUMERO
     |PARENTESIS expr PARENTESIS
     |VARIABLE
@@ -41,16 +40,19 @@ textos: TEXTO+
         |OPERADORESBOOL
         ;
 
-condicionif: variable=VARIABLE
+condicionif: varIzquierda=NUMERO|varIzquierda=VARIABLE
              operadorcond=operadorcondicional
-             valor=NUMERO|STRING|FLOAT|VARIABLE
+             varDerecha=NUMERO|varIzquierda=VARIABLE
 
 ;
-operadorcondicional: MAYOR #Mayor
-                     |MENOR #Menor
+
+operadorcondicional: MAYORIGUAL #Mayor
+                     |MENORIGUAL #Menor
                      |IGUALIGUAL #Igualigual
+                     |MENOR #Menor
+                     |MAYOR #Mayor
                      ;
-condicionfor: PARENTESIS asignacion SEPARADOR expr SEPARADOR VARIABLE INDEC PARENTESIS
+condicionfor: PARENTESIS ASIGNAR nombrevariable=VARIABLE IGUAL valornum=NUMERO SEPARADOR  VARIABLE operadorcondicional valorlim=NUMERO SEPARADOR VARIABLE INDEC PARENTESIS
 ;
 branch : positivo= IF actualizar
          |negativo= ELSE actualizar
@@ -88,8 +90,10 @@ SEPARADOR:',';
 INTRO:'\r\n';
 INDEC:('++'|'--');
 //CONDICIONES
-MAYOR: '>=';
-MENOR: '<=';
+MAYOR:'>';
+MENOR:'<';
+MAYORIGUAL: '>=';
+MENORIGUAL: '<=';
 IGUALIGUAL: '==';
 FINCONDICION:'???'|'$$$'|'%%%';
 IF:'si'ESPACIO*'->' ;

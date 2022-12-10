@@ -1,7 +1,12 @@
-
+# Inicializacion de variable
 asignar a = 20 ;P
 
+ a = 5 - 2 ;P
 
-a = 5 - 2 ;P
-mostrar a ;P
+//for
+(asignar i=0,i>3,i++)$$$
+ a = 5 - 2 ;P
+ mostrar a;P
 terminar
+
+
