@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl3Compiladores/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -244,6 +244,18 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBranch(LenguajeInventadoParser.BranchContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -335,6 +347,18 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFor(LenguajeInventadoParser.ForContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhile(LenguajeInventadoParser.WhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile(LenguajeInventadoParser.WhileContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

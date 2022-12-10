@@ -8,7 +8,8 @@ terminar
 # imprimir por pantalla
 //for
 (asignar i=0,i>10,i++)$$$
- a = 5 - 2 ;P
+ a = 7 - 2 ;P
+ mostrar a ;P
 terminar
 
 

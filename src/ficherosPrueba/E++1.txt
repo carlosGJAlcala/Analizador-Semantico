@@ -4,7 +4,7 @@ asignar a = 20 ;P
  a = 5 - 2 ;P
 
 //for
-(asignar i=0,i>3,i++)$$$
+(asignar i=0,i>5,i++)$$$
  a = 5 - 2 ;P
  mostrar a;P
 terminar

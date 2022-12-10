@@ -19,7 +19,7 @@ public class Launch {
     public static void main(String[] args) {
         try {
 
-            String source = "./src/FicherosPrueba/E++1.txt";
+            String source = "./src/FicherosPrueba/E++.txt";
             CharStream cs = fromFileName(source);
             LenguajeInventadoLexer Lexer = new LenguajeInventadoLexer(cs);
             CommonTokenStream token = new CommonTokenStream(Lexer);

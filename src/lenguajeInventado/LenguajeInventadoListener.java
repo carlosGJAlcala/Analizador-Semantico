@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl3Compiladores/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -216,6 +216,16 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 */
 	void exitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#condicionwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#condicionwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#branch}.
 	 * @param ctx the parse tree
 	 */
@@ -303,4 +313,14 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFor(LenguajeInventadoParser.ForContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LenguajeInventadoParser#while}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile(LenguajeInventadoParser.WhileContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LenguajeInventadoParser#while}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile(LenguajeInventadoParser.WhileContext ctx);
 }

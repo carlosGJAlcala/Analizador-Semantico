@@ -297,11 +297,11 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
 
         visitChildren(ctx);
         this.comando="    iload "+pos1+"\n" +
-                "    ldc "+pos1+" \n" +
+                "    ldc 1"+ "\n" +
                 "    iadd\n" +
-                "    istore "+pos2+"\n" +
-                "    iload "+pos2+"\n" +
-                "    iload "+pos1;
+                "    istore "+pos1+"\n" +
+                "    iload "+pos1+"\n" +
+                "    iload "+pos2;
         gj.setComandos(comando);
         this.comando = "if_icmplt bucleWhile"+intContBucle ;
         gj.setComandos(comando);
@@ -335,6 +335,86 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
     }
 
     private String comprobarVarFor(String var1, String valor1) {
+
+        //comprueba si es una memoria o es un numero,
+        varTemporal = new Variable();
+
+
+        this.comando = "ldc " + valor1;
+        gj.setComandos(comando);
+        varTemporal.setTipo("int");
+        this.intContBucle = intContBucle + 1;
+        varTemporal.setNombre(var1);
+        ts.Insertar(varTemporal);
+        this.comando = "istore " + varTemporal.getContador();
+        gj.setComandos(comando);
+
+
+        return varTemporal.getContador() + "";
+
+    }
+
+    @Override
+    public String visitWhile(LenguajeInventadoParser.WhileContext ctx) {
+
+        visitChildren(ctx);
+        this.comando="    iload "+pos1+"\n" +
+                "    ldc 1"+ "\n" +
+                "    iadd\n" +
+                "    istore "+pos1+"\n" +
+                "    iload "+pos1+"\n" +
+                "    iload "+pos2;
+        gj.setComandos(comando);
+        this.comando = "if_icmplt bucleWhile"+intContBucle ;
+        gj.setComandos(comando);
+        comando = "noEntra"+intContBucle+":";
+        gj.setComandos(comando);
+        return null;
+    }
+    @Override
+    public String visitCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx) {
+
+        String var1 = ctx.varIzquierda.getText();
+        String var2 = ctx.varDerecha.getText();
+        if (var1.matches("[A-Za-z].*")) {
+            varTemporal = ts.fecth(var1);
+            var1 = varTemporal.getContador() + "";
+            this.comando = "ldc " + var1;
+            gj.setComandos(comando);
+            this.comando = "istore " + varTemporal.getContador();
+        }
+        if (var2.matches("[A-Za-z].*")) {
+            varTemporal = ts.fecth(var2);
+            var2 = varTemporal.getContador() + "";
+            this.comando = "ldc " + var2;
+            gj.setComandos(comando);
+            this.comando = "istore " + varTemporal.getContador();
+        }
+        String op = ctx.operadorcond.getText();
+        if ((op.matches("==.*")) && (Integer.parseInt(var2) > Integer.parseInt(var1))) {
+            String var2 = (intContBucle++) + "";
+            String valor1 = ctx.valornum.getText();
+            String valor2 = ctx.valorlim.getText();
+
+
+            pos1 = comprobarVarFor(var1, valor1);
+            pos2 = comprobarVarFor(var2, valor2);
+
+
+            this.comando = "iload " + pos1;
+            gj.setComandos(comando);
+            this.comando = "iload " + pos2;
+            gj.setComandos(comando);
+
+            this.comando = "if_icmpge noEntra" + intContBucle;
+            gj.setComandos(comando);
+            this.comando = "bucleWhile" + intContBucle + ":";
+            gj.setComandos(comando);
+            return null;
+        }
+    }
+
+    private String comprobarVarWhile(String var1, String valor1) {
 
         //comprueba si es una memoria o es un numero,
         varTemporal = new Variable();

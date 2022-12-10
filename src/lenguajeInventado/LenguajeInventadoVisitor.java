@@ -1,4 +1,4 @@
-// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/Pl3Compiladores/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -134,6 +134,12 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCondicionfor(LenguajeInventadoParser.CondicionforContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#condicionwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondicionwhile(LenguajeInventadoParser.CondicionwhileContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#branch}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -185,4 +191,10 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFor(LenguajeInventadoParser.ForContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeInventadoParser#while}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile(LenguajeInventadoParser.WhileContext ctx);
 }

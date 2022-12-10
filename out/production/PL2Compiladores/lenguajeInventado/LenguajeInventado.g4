@@ -9,6 +9,7 @@ campo:asignacion
     |mostrar
     |if
     |for
+    |while
     |actualizar
     ;
 asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr FINLINEA ;
@@ -52,8 +53,11 @@ operadorcondicional: MAYORIGUAL #Mayor
                      |MENOR #Menor
                      |MAYOR #Mayor
                      ;
-condicionfor: PARENTESIS ASIGNAR nombrevariable=VARIABLE IGUAL valornum=NUMERO SEPARADOR  VARIABLE operadorcondicional valorlim=NUMERO SEPARADOR VARIABLE INDEC PARENTESIS
-;
+condicionfor: PARENTESIS ASIGNAR nombrevariable=VARIABLE IGUAL valornum=NUMERO SEPARADOR  VARIABLE operadorcondicional valorlim=NUMERO SEPARADOR VARIABLE INDEC PARENTESIS;
+
+condicionwhile: varIzquierda=NUMERO|varIzquierda=VARIABLE
+                operadorcond=operadorcondicional
+                varDerecha=NUMERO|varIzquierda=VARIABLE;
 branch : positivo= IF actualizar
          |negativo= ELSE actualizar
          ;
@@ -66,6 +70,7 @@ valorAmostrar:  valor=NUMERO #NumMostrar
               ;
 if:condicionif FINCONDICION branch+ FINCOND;
 for:condicionfor FINCONDICION campo+ FINCOND;
+while: condicionwhile FINCONDICION campo+ FINCOND;
 
 
 ESPACIO : (' ' | '\t')+  -> skip;
