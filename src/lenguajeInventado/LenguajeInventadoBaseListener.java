@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -196,37 +196,181 @@ public class LenguajeInventadoBaseListener implements LenguajeInventadoListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMayor(LenguajeInventadoParser.MayorContext ctx) { }
+	@Override public void enterMayorigualif(LenguajeInventadoParser.MayorigualifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMayor(LenguajeInventadoParser.MayorContext ctx) { }
+	@Override public void exitMayorigualif(LenguajeInventadoParser.MayorigualifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMenor(LenguajeInventadoParser.MenorContext ctx) { }
+	@Override public void enterMenorigualif(LenguajeInventadoParser.MenorigualifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMenor(LenguajeInventadoParser.MenorContext ctx) { }
+	@Override public void exitMenorigualif(LenguajeInventadoParser.MenorigualifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIgualigual(LenguajeInventadoParser.IgualigualContext ctx) { }
+	@Override public void enterIgualigualif(LenguajeInventadoParser.IgualigualifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIgualigual(LenguajeInventadoParser.IgualigualContext ctx) { }
+	@Override public void exitIgualigualif(LenguajeInventadoParser.IgualigualifContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenorif(LenguajeInventadoParser.MenorifContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenorif(LenguajeInventadoParser.MenorifContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMayorif(LenguajeInventadoParser.MayorifContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMayorif(LenguajeInventadoParser.MayorifContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMayorigualfor(LenguajeInventadoParser.MayorigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMayorigualfor(LenguajeInventadoParser.MayorigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenorigualfor(LenguajeInventadoParser.MenorigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenorigualfor(LenguajeInventadoParser.MenorigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIgualigualfor(LenguajeInventadoParser.IgualigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIgualigualfor(LenguajeInventadoParser.IgualigualforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenorfor(LenguajeInventadoParser.MenorforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenorfor(LenguajeInventadoParser.MenorforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMayorfor(LenguajeInventadoParser.MayorforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMayorfor(LenguajeInventadoParser.MayorforContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMayorigualwhile(LenguajeInventadoParser.MayorigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMayorigualwhile(LenguajeInventadoParser.MayorigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenorigualwhile(LenguajeInventadoParser.MenorigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenorigualwhile(LenguajeInventadoParser.MenorigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIgualigualwhile(LenguajeInventadoParser.IgualigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIgualigualwhile(LenguajeInventadoParser.IgualigualwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMenorwhile(LenguajeInventadoParser.MenorwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMenorwhile(LenguajeInventadoParser.MenorwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMayorwhile(LenguajeInventadoParser.MayorwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMayorwhile(LenguajeInventadoParser.MayorwhileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

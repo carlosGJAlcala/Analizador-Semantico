@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

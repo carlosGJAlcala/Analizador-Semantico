@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -170,41 +170,185 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 */
 	void exitCondicionif(LenguajeInventadoParser.CondicionifContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Mayor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Enter a parse tree produced by the {@code Mayorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void enterMayor(LenguajeInventadoParser.MayorContext ctx);
+	void enterMayorigualif(LenguajeInventadoParser.MayorigualifContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Mayor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Exit a parse tree produced by the {@code Mayorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void exitMayor(LenguajeInventadoParser.MayorContext ctx);
+	void exitMayorigualif(LenguajeInventadoParser.MayorigualifContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Menor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Enter a parse tree produced by the {@code Menorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void enterMenor(LenguajeInventadoParser.MenorContext ctx);
+	void enterMenorigualif(LenguajeInventadoParser.MenorigualifContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Menor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Exit a parse tree produced by the {@code Menorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void exitMenor(LenguajeInventadoParser.MenorContext ctx);
+	void exitMenorigualif(LenguajeInventadoParser.MenorigualifContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Igualigual}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Enter a parse tree produced by the {@code Igualigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void enterIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	void enterIgualigualif(LenguajeInventadoParser.IgualigualifContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Igualigual}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Exit a parse tree produced by the {@code Igualigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 */
-	void exitIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	void exitIgualigualif(LenguajeInventadoParser.IgualigualifContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenorif(LenguajeInventadoParser.MenorifContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenorif(LenguajeInventadoParser.MenorifContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mayorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 */
+	void enterMayorif(LenguajeInventadoParser.MayorifContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mayorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 */
+	void exitMayorif(LenguajeInventadoParser.MayorifContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mayorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterMayorigualfor(LenguajeInventadoParser.MayorigualforContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mayorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitMayorigualfor(LenguajeInventadoParser.MayorigualforContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenorigualfor(LenguajeInventadoParser.MenorigualforContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenorigualfor(LenguajeInventadoParser.MenorigualforContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Igualigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterIgualigualfor(LenguajeInventadoParser.IgualigualforContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Igualigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitIgualigualfor(LenguajeInventadoParser.IgualigualforContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenorfor(LenguajeInventadoParser.MenorforContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenorfor(LenguajeInventadoParser.MenorforContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mayorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void enterMayorfor(LenguajeInventadoParser.MayorforContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mayorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 */
+	void exitMayorfor(LenguajeInventadoParser.MayorforContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mayorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterMayorigualwhile(LenguajeInventadoParser.MayorigualwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mayorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitMayorigualwhile(LenguajeInventadoParser.MayorigualwhileContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenorigualwhile(LenguajeInventadoParser.MenorigualwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenorigualwhile(LenguajeInventadoParser.MenorigualwhileContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Igualigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterIgualigualwhile(LenguajeInventadoParser.IgualigualwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Igualigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitIgualigualwhile(LenguajeInventadoParser.IgualigualwhileContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Menorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenorwhile(LenguajeInventadoParser.MenorwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Menorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenorwhile(LenguajeInventadoParser.MenorwhileContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mayorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void enterMayorwhile(LenguajeInventadoParser.MayorwhileContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mayorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 */
+	void exitMayorwhile(LenguajeInventadoParser.MayorwhileContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LenguajeInventadoParser#condicionfor}.
 	 * @param ctx the parse tree

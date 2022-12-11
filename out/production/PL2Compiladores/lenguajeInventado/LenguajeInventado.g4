@@ -16,7 +16,7 @@ asignacion: ASIGNAR nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 actualizar:nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 
 expr:operacion
-    |expr(operadorcondicional)expr
+    |expr(operadorcondicionalif)expr
     |NUMERO
     |PARENTESIS expr PARENTESIS
     |VARIABLE
@@ -36,27 +36,41 @@ comentario: COMENTARIOABRIR textos* COMENTARIOCERRAR
             ;
 textos: TEXTO+
         |PLUS|MINUS|DIVISOR|POR
-        |operadorcondicional
+        |operadorcondicionalif
+        |operadorcondicionalfor
+        |operadorcondicionalwhile
         |FINCONDICION
         |OPERADORESBOOL
         ;
 
 condicionif: varIzquierda=NUMERO|varIzquierda=VARIABLE
-             operadorcond=operadorcondicional
+             operadorcond=operadorcondicionalif
              varDerecha=NUMERO|varIzquierda=VARIABLE
 
 ;
 
-operadorcondicional: MAYORIGUAL #Mayor
-                     |MENORIGUAL #Menor
-                     |IGUALIGUAL #Igualigual
-                     |MENOR #Menor
-                     |MAYOR #Mayor
+operadorcondicionalif: MAYORIGUAL #Mayorigualif
+                     |MENORIGUAL #Menorigualif
+                     |IGUALIGUAL #Igualigualif
+                     |MENOR #Menorif
+                     |MAYOR #Mayorif
                      ;
-condicionfor: PARENTESIS ASIGNAR nombrevariable=VARIABLE IGUAL valornum=NUMERO SEPARADOR  VARIABLE operadorcondicional valorlim=NUMERO SEPARADOR VARIABLE INDEC PARENTESIS;
+operadorcondicionalfor: MAYORIGUAL #Mayorigualfor
+                     |MENORIGUAL #Menorigualfor
+                     |IGUALIGUAL #Igualigualfor
+                     |MENOR #Menorfor
+                     |MAYOR #Mayorfor
+                     ;
+operadorcondicionalwhile: MAYORIGUAL #Mayorigualwhile
+                     |MENORIGUAL #Menorigualwhile
+                     |IGUALIGUAL #Igualigualwhile
+                     |MENOR #Menorwhile
+                     |MAYOR #Mayorwhile
+                     ;
+condicionfor: PARENTESIS ASIGNAR nombrevariable=VARIABLE IGUAL valornum=NUMERO SEPARADOR  VARIABLE operadorcondicionalfor valorlim=NUMERO SEPARADOR VARIABLE INDEC PARENTESIS;
 
 condicionwhile: varIzquierda=NUMERO|varIzquierda=VARIABLE
-                operadorcond=operadorcondicional
+                operadorcond=operadorcondicionalwhile
                 varDerecha=NUMERO|varIzquierda=VARIABLE;
 branch : positivo= IF actualizar
          |negativo= ELSE actualizar

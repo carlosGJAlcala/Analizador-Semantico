@@ -14,7 +14,7 @@ terminar
 
 
 
-a == 2 %%%
+a == 5 %%%
 a = 5 - 2 ;P
 terminar
 mostrar a ;P

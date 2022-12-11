@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/Lab/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -107,26 +107,110 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCondicionif(LenguajeInventadoParser.CondicionifContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Mayor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Visit a parse tree produced by the {@code Mayorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMayor(LenguajeInventadoParser.MayorContext ctx);
+	T visitMayorigualif(LenguajeInventadoParser.MayorigualifContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Menor}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Visit a parse tree produced by the {@code Menorigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMenor(LenguajeInventadoParser.MenorContext ctx);
+	T visitMenorigualif(LenguajeInventadoParser.MenorigualifContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Igualigual}
-	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicional}.
+	 * Visit a parse tree produced by the {@code Igualigualif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIgualigual(LenguajeInventadoParser.IgualigualContext ctx);
+	T visitIgualigualif(LenguajeInventadoParser.IgualigualifContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenorif(LenguajeInventadoParser.MenorifContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mayorif}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalif}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMayorif(LenguajeInventadoParser.MayorifContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mayorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMayorigualfor(LenguajeInventadoParser.MayorigualforContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menorigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenorigualfor(LenguajeInventadoParser.MenorigualforContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Igualigualfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIgualigualfor(LenguajeInventadoParser.IgualigualforContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenorfor(LenguajeInventadoParser.MenorforContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mayorfor}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalfor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMayorfor(LenguajeInventadoParser.MayorforContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mayorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMayorigualwhile(LenguajeInventadoParser.MayorigualwhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menorigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenorigualwhile(LenguajeInventadoParser.MenorigualwhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Igualigualwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIgualigualwhile(LenguajeInventadoParser.IgualigualwhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Menorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenorwhile(LenguajeInventadoParser.MenorwhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mayorwhile}
+	 * labeled alternative in {@link LenguajeInventadoParser#operadorcondicionalwhile}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMayorwhile(LenguajeInventadoParser.MayorwhileContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LenguajeInventadoParser#condicionfor}.
 	 * @param ctx the parse tree

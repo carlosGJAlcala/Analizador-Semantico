@@ -1,12 +1,19 @@
 # Inicializacion de variable
-asignar a = 20 ;P
+asignar a = 100 ;P
 
- a = 5 - 2 ;P
-
-//for
-(asignar i=0,i>5,i++)$$$
- a = 5 - 2 ;P
- mostrar a;P
+# if-else sencillo
+a == 2 ??? si ->  a = 5 - 2 ;P
 terminar
+
+
+# imprimir por pantalla
+//for
+(asignar i=0,i>10,i++)$$$
+ a = 10 - 2 ;P
+terminar
+
+mostrar a ;P
+
+
 
 
