@@ -6,11 +6,11 @@
    .limit locals 100
 
 
-ldc 20
+ldc 2
 istore 1
 ldc 2
 istore 2
-ldc 1
+ldc 2
 istore 1
 iload 2
 iload 1
@@ -22,6 +22,11 @@ ineg
 iadd
 istore 1
 noEntraIf1:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+
+iload 1
+
+invokevirtual java/io/PrintStream/print(I)V
 ldc 0
 istore 3
 ldc 10
