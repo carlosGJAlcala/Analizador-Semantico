@@ -88,7 +88,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         String nombreVarible = ctx.variable.getText();
         Variable var = ts.fecth(nombreVarible);
         inttemporal = Integer.parseInt(var.getValor());
-        comando = "ldc " + inttemporal;
+        comando = "iload " + var.getContador();
         gj.setComandos(comando);
         return null;
     }
@@ -276,7 +276,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         gj.setComandos(comando);
         visitChildren(ctx);
 
-        comando = "invokevirtual java/io/PrintStream/print(" + comando + ")V";
+        comando = "invokevirtual java/io/PrintStream/println(" + comando + ")V";
         gj.setComandos(comando);
 
 
@@ -466,11 +466,11 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
             gj.setComandos(comando);
 
         } else if (op.matches(">=.*")){
-            this.comando = "if_icmpgt bucleWhile"+intContWhile ;
+            this.comando = "if_icmpge bucleWhile"+intContWhile ;
             gj.setComandos(comando);
         }
         else if (op.matches("<=.*")){
-            this.comando = "if_icmplt bucleWhile"+intContWhile ;
+            this.comando = "if_icmple bucleWhile"+intContWhile ;
             gj.setComandos(comando);
         }
         comando = "noEntraWhile"+ intContWhile +":";

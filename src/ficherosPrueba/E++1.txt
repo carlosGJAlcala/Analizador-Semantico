@@ -1,26 +1,25 @@
 # Inicializacion de variable
-asignar a = 2 ;P
+asignar a = 10 ;P
 
 # if-else sencillo
-a == 2 ??? si ->  a = 5 - 2 ;P
+a == 10 ??? si ->  a = a + 2 ;P
 terminar
 
 mostrar a ;P
 
 # imprimir por pantalla
 //for
-(asignar i=0,i>10,i++)$$$
- a = 7 - 2 ;P
+(asignar i=0,i>3,i++)$$$
+ a = a - 1 ;P
  mostrar a ;P
 terminar
 
 
 
-a == 5 %%%
-a = a - 2 ;P
-terminar
-
+a >= 5 %%%
+a = 6 - 2 ;P
 mostrar a ;P
+terminar
 
 
 
