@@ -333,7 +333,7 @@ public class MyVisitor extends LenguajeInventadoBaseVisitor<String> {
         varTemporal = new Variable();
         if (var1.matches("[A-Za-z].*")) {
             varTemporal = ts.fecth(var1);
-            var1 = varTemporal.getContador() + "";
+
             this.comando = "ldc " + varTemporal.getValor();
             gj.setComandos(comando);
             this.comando = "istore " + varTemporal.getContador();
