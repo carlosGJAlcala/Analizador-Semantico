@@ -10,11 +10,6 @@ ldc 10
 istore 0
 ldc "hola Mundo"
 astore 1
-getstatic java/lang/System/out Ljava/io/PrintStream;
-
-ldc "hola Mundo"
-
-invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 ldc 10
 istore 2
 ldc 10

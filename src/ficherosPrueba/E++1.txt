@@ -2,7 +2,7 @@
 asignar a = 10 ;P
 asignar b= "hola Mundo";P
 
-
+mostrar b;P
 # if-else sencillo
 a == 10 ??? si ->  a = a + 2 ;P
 terminar
