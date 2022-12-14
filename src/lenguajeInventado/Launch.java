@@ -1,4 +1,4 @@
-package lenguajeInventado.control;
+package lenguajeInventado;
 
 
 import lenguajeInventado.gen.LenguajeInventadoLexer;

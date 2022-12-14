@@ -17,12 +17,17 @@ actualizar:nombrevariable=VARIABLE IGUAL expr FINLINEA ;
 
 expr:operacion
     |expr(operadorcondicionalif)expr
-    |NUMERO
     |PARENTESIS expr PARENTESIS
     |VARIABLE
     |VARIABLE OPERADORESBOOL VARIABLE
     |BOOLTIPO OPERADORESBOOL BOOLTIPO
+    |string
     ;
+
+string:valor=STRING #String1
+      |left=string PLUS right=STRING #StrStr
+      |left=VARIABLE PLUS right=STRING #VarStr
+      ;
 operacion:lef=operacion PLUS right=NUMERO #Plus
          |left=operacion  MINUS right=NUMERO #Minus
          |left=operacion  POR right=NUMERO #Mul

@@ -13,7 +13,7 @@ public class TablaSimbolos {
         this.tablaExpansion = new HashMap();
         this.anterior = null;
         this.sig = null;
-        this.contador = 0;
+        this.contador = -1;
         this.contVarBucle = 0;
     }
 
@@ -72,6 +72,14 @@ public class TablaSimbolos {
     public void Actualizar(Variable var) {
         tablaExpansion.put(var.getNombre(), var);
 
+    }
+
+    public boolean isExist(String var) {
+        if (tablaExpansion.get(var) != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //busca y trae el objecto Variable

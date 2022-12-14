@@ -1,5 +1,7 @@
 # Inicializacion de variable
 asignar a = 10 ;P
+asignar b= "hola Mundo";P
+
 
 # if-else sencillo
 a == 10 ??? si ->  a = a + 2 ;P
@@ -14,7 +16,7 @@ mostrar a ;P
  mostrar a ;P
 terminar
 
-
+mostrar "adios mundo" ;P
 
 a >= 5 %%%
 a = 6 - 2 ;P

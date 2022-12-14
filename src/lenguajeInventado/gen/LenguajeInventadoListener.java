@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/final/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado.gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -67,6 +67,42 @@ public interface LenguajeInventadoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpr(LenguajeInventadoParser.ExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code VarStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarStr(LenguajeInventadoParser.VarStrContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code VarStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarStr(LenguajeInventadoParser.VarStrContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code StrStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterStrStr(LenguajeInventadoParser.StrStrContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code StrStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitStrStr(LenguajeInventadoParser.StrStrContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code String1}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString1(LenguajeInventadoParser.String1Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code String1}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString1(LenguajeInventadoParser.String1Context ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Div}
 	 * labeled alternative in {@link LenguajeInventadoParser#operacion}.
