@@ -1,4 +1,4 @@
-// Generated from D:/Universidad/Compiladores/PL3/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
+// Generated from C:/Users/carlo/OneDrive - Universidad de Alcala/3anyo/1cuatri/Compiladores/LABORATORIO/final/src/lenguajeInventado\LenguajeInventado.g4 by ANTLR 4.10.1
 package lenguajeInventado.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -46,6 +46,27 @@ public interface LenguajeInventadoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpr(LenguajeInventadoParser.ExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code VarStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarStr(LenguajeInventadoParser.VarStrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StrStr}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStrStr(LenguajeInventadoParser.StrStrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code String1}
+	 * labeled alternative in {@link LenguajeInventadoParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString1(LenguajeInventadoParser.String1Context ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Div}
 	 * labeled alternative in {@link LenguajeInventadoParser#operacion}.
